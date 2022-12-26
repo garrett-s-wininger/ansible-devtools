@@ -1,0 +1,5 @@
+---
+- name: Install Haskell Compiler
+  ansible.builtin.package:
+    name: ghc
+    state: present

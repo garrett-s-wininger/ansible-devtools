@@ -1,0 +1,5 @@
+---
+- name: Install Ruby Interpreter
+  ansible.builtin.package:
+    name: ruby
+    state: present

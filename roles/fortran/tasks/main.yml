@@ -1,0 +1,5 @@
+---
+- name: Install Fortran Compiler
+  ansible.builtin.package:
+    name: gfortran
+    state: present

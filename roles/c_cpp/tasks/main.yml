@@ -1,0 +1,8 @@
+---
+- name: Install C/C++ Compilers and Debugger
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - build-essential
+    - gdb
