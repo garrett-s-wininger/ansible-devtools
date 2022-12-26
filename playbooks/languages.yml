@@ -32,6 +32,13 @@
       tags:
         - fortran
 
+    - name: Import Go Role
+      import_role:
+        name: garrett_s_wininger.devtools.go
+      tags:
+        - go
+        - golang
+
     - name: Import Haskell Role  
       import_role:
         name: garrett_s_wininger.devtools.haskell
