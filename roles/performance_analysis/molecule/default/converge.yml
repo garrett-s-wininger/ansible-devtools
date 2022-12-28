@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include Performance Analysis Roled
+      ansible.builtin.include_role:
+        name: performance_analysis

@@ -1,0 +1,58 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Tool Status
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      check_mode: yes
+      register: tooling_status
+      loop:
+        - bind9-dnsutils
+        - bpfcc-tools
+        - bpftrace
+        - blktrace
+        - cpuid
+        - dmidecode
+        - dstat
+        - ethtool
+        - fatrace
+        - fio
+        - hdparm
+        - hping3
+        - hwinfo
+        - hwloc
+        - ifstat
+        - iftop
+        - iotop
+        - iperf3
+        - lldpad
+        - lshw
+        - lsof
+        - lsscsi
+        - ltrace
+        - msr-tools
+        - mtr
+        - nicstat
+        - numactl
+        - pchar
+        - pciutils
+        - schedtool
+        - smartmontools
+        - snmp
+        - strace
+        - sysbench
+        - sysstat
+        - tcpdump
+        - tiptop
+        - traceroute
+        - util-linux
+        - wireless-tools
+
+    - name: Ensure Tooling is Present
+      ansible.builtin.assert:
+        that:
+          - "not {{ item.changed }}"
+      loop: "{{ tooling_status.results }}"
