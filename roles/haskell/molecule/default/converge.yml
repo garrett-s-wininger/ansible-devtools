@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include Haskell Role
+      include_role:
+        name: haskell

@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Compiler Status
+      ansible.builtin.package:
+        name: ghc
+        state: present
+      check_mode: yes
+      register: ghc_status
+
+    - name: Assert Compiler Present
+      ansible.builtin.assert:
+        that: not ghc_status.changed
