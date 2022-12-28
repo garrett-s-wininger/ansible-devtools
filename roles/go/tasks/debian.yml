@@ -1,0 +1,6 @@
+---
+- name: Install Go Compiler
+  ansible.builtin.apt:
+    name: golang
+    state: present
+    update_cache: yes

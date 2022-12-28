@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Golang Tooling Status
+      ansible.builtin.package:
+        name: golang
+        state: present
+      check_mode: yes
+      register: golang_status
+
+    - name: Assert Language Tooling Present
+      ansible.builtin.assert:
+        that: not golang_status.changed
