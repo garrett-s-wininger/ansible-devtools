@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Ruby Interpreter Presence
+      ansible.builtin.package:
+        name: ruby
+        state: present
+      check_mode: yes
+      register: ruby_status
+
+    - name: Ensure Interpreter is Available
+      ansible.builtin.assert:
+        that: not ruby_status.changed
