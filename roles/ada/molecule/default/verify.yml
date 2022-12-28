@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Check Ada Compiler Installation Status
+      ansible.builtin.package:
+        name: gnat
+        state: present
+      check_mode: yes
+      register: package_status
+
+    - name: Test Compiler Installation
+      ansible.builtin.assert:
+        that: not package_status.changed
