@@ -1,0 +1,35 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Component Status
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      check_mode: yes
+      register: package_statuses
+      loop:
+        - libglfw3-dev
+        - libglm-dev
+        - libvulkan-dev
+        - python3-pip
+        - spirv-tools
+        - vulkan-tools
+        - vulkan-validationlayers-dev
+
+    - name: Check Extension Loader Status
+      ansible.builtin.pip:
+        name: glad
+        state: present
+      check_mode: yes
+      register: glad_status
+    
+    - name: Ensure Required Packages are Present
+      ansible.builtin.assert:
+        that: "not {{ item.changed }}"
+      loop: "{{ package_statuses.results }}"
+
+    - name: Ensure Glad is Present
+      ansible.builtin.assert:
+        that: not glad_status.changed

@@ -1,17 +1,5 @@
 ---
-- name: Install OpenGL/Vulkan Libraries/Tooling
-  ansible.builtin.package:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - libglfw3-dev
-    - libglm-dev
-    - libvulkan-dev
-    - python3-pip
-    - spirv-tools
-    - vulkan-tools
-    - vulkan-validationlayers-dev
-
-- name: Install Pip Modules for OpenGL Extension Loading
-  ansible.builtin.pip:
-    name: glad
+- name: Install for Debian Platforms
+  ansible.builtin.import_tasks:
+    file: debian.yml
+  when: ansible_os_family == "Debian"
