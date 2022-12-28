@@ -1,8 +1,5 @@
 ---
-- name: Install C/C++ Compilers and Debugger
-  ansible.builtin.package:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - build-essential
-    - gdb
+- name: Install for Debian Platforms
+  ansible.builtin.import_tasks:
+    file: debian.yml
+  when: ansible_os_family == "Debian"

@@ -5,12 +5,12 @@ driver:
   name: docker
 platforms:
   - name: debian
-    image: "debian:11"
-    dockerfile: "debian11.Dockerfile"
+    image: debian:11
+    dockerfile: debian11.Dockerfile
     pre_build_image: false
   - name: ubuntu
-    image: "ubuntu:20.04"
-    dockerfile: "ubuntu2004.Dockerfile"
+    image: ubuntu:20.04
+    dockerfile: ubuntu2004.Dockerfile
     pre_build_image: false
 provisioner:
   name: ansible
