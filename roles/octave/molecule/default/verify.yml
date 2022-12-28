@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Octave Installation Status
+      ansible.builtin.package:
+        name: octave
+        state: present
+      check_mode: yes
+      register: octave_status
+
+    - name: Assert Octave Environment Available
+      ansible.builtin.assert:
+        that: not octave_status.changed

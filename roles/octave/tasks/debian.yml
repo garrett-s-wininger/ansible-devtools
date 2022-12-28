@@ -1,0 +1,6 @@
+---
+- name: Install Octave Environment
+  ansible.builtin.apt:
+    name: octave
+    state: present
+    update_cache: yes

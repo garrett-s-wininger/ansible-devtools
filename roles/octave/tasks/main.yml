@@ -1,5 +1,5 @@
 ---
-- name: Install Octave Environment
-  ansible.builtin.package:
-    name: octave
-    state: present
+- name: Install on Debian Platforms
+  ansible.builtin.import_tasks:
+    file: debian.yml
+  when: ansible_os_family == "Debian"
