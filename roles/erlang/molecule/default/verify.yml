@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Erlang Status
+      ansible.builtin.package:
+        name: erlang
+        state: present
+      check_mode: yes
+      register: erlang_status
+
+    - name: Assert Erlang VM Present
+      ansible.builtin.assert:
+        that: not erlang_status.changed

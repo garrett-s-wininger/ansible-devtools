@@ -1,5 +1,5 @@
 ---
-- name: Install Erlang VM
-  ansible.builtin.package:
-    name: erlang
-    state: present
+- name: Install for Debian Platforms
+  ansible.builtin.import_tasks:
+    file: debian.yml
+  when: ansible_os_family == "Debian"
