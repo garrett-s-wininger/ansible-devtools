@@ -12,6 +12,9 @@ platforms:
     image: ubuntu:20.04
     dockerfile: ubuntu2004.Dockerfile
     pre_build_image: false
+lint: |
+  set -e
+  yamllint .
 provisioner:
   name: ansible
 verifier:

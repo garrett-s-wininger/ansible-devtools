@@ -28,4 +28,3 @@
           - not c_compiler_status.changed
           - not cpp_compiler_status.changed
           - not debugger_status.changed
-
