@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Java Installation Status
+      ansible.builtin.package:
+        name: default-jdk
+        state: present
+      check_mode: true
+      register: jdk_status
+
+    - name: Ensure JDK is Present
+      ansible.builtin.assert:
+        that: not jdk_status.changed
