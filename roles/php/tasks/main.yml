@@ -1,5 +1,5 @@
 ---
-- name: Install PHP Interpreter
-  ansible.builtin.package:
-    name: php
-    state: present
+- name: Install for Debian Platformas
+  ansible.builtin.import_tasks:
+    file: debian.yml
+  when: ansible_os_family == "Debian"

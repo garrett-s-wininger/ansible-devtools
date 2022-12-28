@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check PHP Interpreter Status
+      ansible.builtin.package:
+        name: php
+        state: present
+      check_mode: yes
+      register: php_status
+
+    - name: Assert PHP Installed
+      ansible.builtin.assert:
+        that: not php_status.changed
