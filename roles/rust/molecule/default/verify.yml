@@ -1,0 +1,32 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Rust Compiler Presence
+      ansible.builtin.package:
+        name: rustc
+        state: present
+      check_mode: yes
+      register: rustc_status
+
+    - name: Check Rust Debugger Presence
+      ansible.builtin.package:
+        name: rust-gdb
+        state: present
+      check_mode: yes
+      register: rust_gdb_status
+
+    - name: Check Cargo Presence
+      ansible.builtin.package:
+        name: cargo
+        state: present
+      check_mode: yes
+      register: cargo_status
+
+    - name: Validate Rust Development Components
+      ansible.builtin.assert:
+        that:
+          - not rustc_status.changed
+          - not rust_gdb_status.changed
+          - not cargo_status.changed

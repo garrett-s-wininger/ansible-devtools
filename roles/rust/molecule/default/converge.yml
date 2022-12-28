@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: Include Ruby Role
+    - name: Include Rust Role
       include_role:
-        name: ruby
+        name: rust
