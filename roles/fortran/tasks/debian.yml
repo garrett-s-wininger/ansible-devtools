@@ -1,0 +1,6 @@
+---
+- name: Install Fortran Compiler
+  ansible.builtin.apt:
+    name: gfortran
+    state: present
+    update_cache: yes

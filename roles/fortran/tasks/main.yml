@@ -1,5 +1,5 @@
 ---
-- name: Install Fortran Compiler
-  ansible.builtin.package:
-    name: gfortran
-    state: present
+- name: Install for Debian Platforms
+  ansible.builtin.import_tasks:
+    file: debian.yml
+  when: ansible_os_family == "Debian"

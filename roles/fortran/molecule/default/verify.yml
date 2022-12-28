@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Fortran Status
+      ansible.builtin.package:
+        name: gfortran
+        state: present
+      check_mode: yes
+      register: fortran_status
+
+    - name: Assert Packages Present
+      ansible.builtin.assert:
+        that: not fortran_status.changed
