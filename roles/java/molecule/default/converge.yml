@@ -3,5 +3,5 @@
   hosts: all
   tasks:
     - name: Include Java Role
-      include_role:
+      ansible.builtin.include_role:
         name: java
