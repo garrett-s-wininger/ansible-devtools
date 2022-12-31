@@ -1,0 +1,16 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Lua Installation Status
+      ansible.builtin.package:
+        name: lua5.3
+        state: present
+      check_mode: true
+      register: lua_status
+
+    - name: Ensure Lua is Present
+      ansible.builtin.assert:
+        that: 
+          - not lua_status.changed
