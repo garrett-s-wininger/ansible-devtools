@@ -1,0 +1,6 @@
+---
+- name: Install Common Lisp Packages
+  ansible.builtin.apt:
+    package: sbcl
+    state: present
+    update_cache: yes

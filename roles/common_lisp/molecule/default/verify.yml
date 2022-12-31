@@ -3,14 +3,14 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Check Julia Installation Status
+    - name: Check Common Lisp Installation Status
       ansible.builtin.package:
-        name: julia
+        name: sbcl
         state: present
       check_mode: true
-      register: julia_status
+      register: sbcl_status
 
-    - name: Ensure NodeJS/NPM are Present
+    - name: Ensure Common Lisp is Present
       ansible.builtin.assert:
         that: 
-          - not julia_status.changed
+          - not sbcl_status.changed

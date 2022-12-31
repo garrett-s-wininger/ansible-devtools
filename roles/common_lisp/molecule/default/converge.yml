@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include Common Lisp Role
+      ansible.builtin.include_role:
+        name: common_lisp
