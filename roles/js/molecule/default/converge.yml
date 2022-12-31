@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include JS Role
+      ansible.builtin.include_role:
+        name: js

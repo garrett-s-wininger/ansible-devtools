@@ -1,0 +1,8 @@
+---
+- name: Install NodeJS Packages
+  ansible.builtin.apt:
+    pkg: 
+      - nodejs
+      - npm
+    state: present
+    update_cache: yes

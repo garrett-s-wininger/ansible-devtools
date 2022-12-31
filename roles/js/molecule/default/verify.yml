@@ -1,0 +1,24 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Node Installation Status
+      ansible.builtin.package:
+        name: nodejs
+        state: present
+      check_mode: true
+      register: node_status
+
+    - name: Check NPM Installation Status
+      ansible.builtin.package:
+        name: npm
+        state: present
+      check_mode: true
+      register: npm_status
+
+    - name: Ensure NodeJS/NPM are Present
+      ansible.builtin.assert:
+        that: 
+          - not node_status.changed
+          - not npm_status.changed
