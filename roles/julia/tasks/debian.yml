@@ -1,0 +1,6 @@
+---
+- name: Install Julia Packages
+  ansible.builtin.apt:
+    package: julia
+    state: present
+    update_cache: yes

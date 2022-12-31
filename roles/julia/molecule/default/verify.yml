@@ -1,0 +1,16 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Julia Installation Status
+      ansible.builtin.package:
+        name: Julia
+        state: present
+      check_mode: true
+      register: julia_status
+
+    - name: Ensure NodeJS/NPM are Present
+      ansible.builtin.assert:
+        that: 
+          - not julia_status.changed
