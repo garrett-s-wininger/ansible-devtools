@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Scheme Interpreter Status
+      ansible.builtin.package:
+        name: guile-3.0
+        state: present
+      check_mode: yes
+      register: guile_status
+
+    - name: Assert Guile Installed
+      ansible.builtin.assert:
+        that: not guile_status.changed
