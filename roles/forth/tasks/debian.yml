@@ -1,0 +1,6 @@
+---
+- name: Install Forth Interpreter
+  ansible.builtin.apt:
+    name: gforth
+    state: present
+    update_cache: yes

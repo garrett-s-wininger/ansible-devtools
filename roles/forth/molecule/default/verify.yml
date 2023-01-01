@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Forth Interpreter Status
+      ansible.builtin.package:
+        name: gforth
+        state: present
+      check_mode: yes
+      register: forth_status
+
+    - name: Assert Forth Installed
+      ansible.builtin.assert:
+        that: not forth_status.changed
