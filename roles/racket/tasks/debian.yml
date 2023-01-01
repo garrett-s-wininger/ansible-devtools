@@ -1,0 +1,6 @@
+---
+- name: Install Racket Interpreter
+  ansible.builtin.apt:
+    name: racket
+    state: present
+    update_cache: yes
