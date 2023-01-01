@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Modula-2 Compiler Status
+      ansible.builtin.package:
+        name: gm2
+        state: present
+      check_mode: yes
+      register: gm2_status
+
+    - name: Assert Modula-2 Installed
+      ansible.builtin.assert:
+        that: not gm2_status.changed

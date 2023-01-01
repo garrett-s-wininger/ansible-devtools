@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include Modula-2 Role
+      ansible.builtin.include_role:
+        name: modula_2
