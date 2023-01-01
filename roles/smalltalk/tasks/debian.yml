@@ -1,0 +1,6 @@
+---
+- name: Install SmallTalk Interpreter
+  ansible.builtin.apt:
+    name: gnu-smalltalk
+    state: present
+    update_cache: yes

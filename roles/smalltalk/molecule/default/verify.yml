@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check SmallTalk Interpreter Status
+      ansible.builtin.package:
+        name: gnu-smalltalk
+        state: present
+      check_mode: yes
+      register: smalltalk_status
+
+    - name: Assert SmallTalk Installed
+      ansible.builtin.assert:
+        that: not smalltalk_status.changed
