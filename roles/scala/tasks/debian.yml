@@ -1,0 +1,6 @@
+---
+- name: Install Scala Compiler
+  ansible.builtin.apt:
+    name: scala
+    state: present
+    update_cache: yes

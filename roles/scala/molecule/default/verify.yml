@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Scala Compiler Status
+      ansible.builtin.package:
+        name: scala
+        state: present
+      check_mode: yes
+      register: scala_status
+
+    - name: Assert Scala Installed
+      ansible.builtin.assert:
+        that: not scala_status.changed

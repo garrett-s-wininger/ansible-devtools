@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include Scala Role
+      ansible.builtin.include_role:
+        name: scala
