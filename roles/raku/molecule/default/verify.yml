@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Raku Interpreter Status
+      ansible.builtin.package:
+        name: perl6
+        state: present
+      check_mode: yes
+      register: raku_status
+
+    - name: Assert Raku Installed
+      ansible.builtin.assert:
+        that: not raku_status.changed

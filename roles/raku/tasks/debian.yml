@@ -1,0 +1,6 @@
+---
+- name: Install Raku Interpreter
+  ansible.builtin.apt:
+    name: perl6
+    state: present
+    update_cache: yes
