@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Nim Compiler Status
+      ansible.builtin.package:
+        name: nim
+        state: present
+      check_mode: yes
+      register: nim_status
+
+    - name: Assert Nim Installed
+      ansible.builtin.assert:
+        that: not nim_status.changed

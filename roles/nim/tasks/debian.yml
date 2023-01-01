@@ -1,0 +1,6 @@
+---
+- name: Install Nim Compiler
+  ansible.builtin.apt:
+    name: nim
+    state: present
+    update_cache: yes
