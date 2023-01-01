@@ -1,0 +1,6 @@
+---
+- name: Install Standard ML Compiler
+  ansible.builtin.apt:
+    name: smlnj
+    state: present
+    update_cache: yes

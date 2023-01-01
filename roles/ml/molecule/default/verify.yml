@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check ML Compiler Status
+      ansible.builtin.package:
+        name: smlnj
+        state: present
+      check_mode: yes
+      register: ml_status
+
+    - name: Assert ML Installed
+      ansible.builtin.assert:
+        that: not ml_status.changed
