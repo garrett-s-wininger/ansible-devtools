@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Tcl Interpreter Status
+      ansible.builtin.package:
+        name: tcl
+        state: present
+      check_mode: yes
+      register: tcl_status
+
+    - name: Assert Tcl Installed
+      ansible.builtin.assert:
+        that: not tcl_status.changed

@@ -1,0 +1,6 @@
+---
+- name: Install Tcl Interpreter
+  ansible.builtin.apt:
+    name: tcl
+    state: present
+    update_cache: yes
