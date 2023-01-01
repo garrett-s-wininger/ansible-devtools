@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check ELixir Compiler Status
+      ansible.builtin.package:
+        name: elixir
+        state: present
+      check_mode: yes
+      register: elixir_status
+
+    - name: Assert Elixir Installed
+      ansible.builtin.assert:
+        that: not elixir_status.changed

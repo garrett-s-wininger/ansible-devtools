@@ -1,0 +1,6 @@
+---
+- name: Install Elixir Compiler
+  ansible.builtin.apt:
+    name: elixir
+    state: present
+    update_cache: yes

@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include Elixir Role
+      ansible.builtin.include_role:
+        name: elixir
