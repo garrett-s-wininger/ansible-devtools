@@ -1,0 +1,6 @@
+---
+- name: Install Objective-C Compiler
+  ansible.builtin.apt:
+    name: gobjc
+    state: present
+    update_cache: yes

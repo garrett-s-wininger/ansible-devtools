@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include Objective-C Role
+      ansible.builtin.include_role:
+        name: objective_c

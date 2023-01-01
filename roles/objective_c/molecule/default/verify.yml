@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Objective-C Compiler Status
+      ansible.builtin.package:
+        name: gobjc
+        state: present
+      check_mode: yes
+      register: gnuobjc_status
+
+    - name: Assert Objective-C Installed
+      ansible.builtin.assert:
+        that: not gnuobjc_status.changed
