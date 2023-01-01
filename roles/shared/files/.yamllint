@@ -1,7 +1,12 @@
 ---
-# Based on ansible-lint config
 extends: default
-
+yaml-files:
+  - '*.yaml'
+  - '*.yml'
+  - '.ansible-lint'
+  - '.yamllint'
+ignore: |
+  .venv/
 rules:
   braces:
     max-spaces-inside: 1
