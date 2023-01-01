@@ -1,0 +1,6 @@
+---
+- name: Install Groovy Compiler
+  ansible.builtin.apt:
+    name: groovy
+    state: present
+    update_cache: yes

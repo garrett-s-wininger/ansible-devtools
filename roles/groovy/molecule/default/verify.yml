@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Groovy Compiler Status
+      ansible.builtin.package:
+        name: groovy
+        state: present
+      check_mode: yes
+      register: groovy_status
+
+    - name: Assert Groocy Installed
+      ansible.builtin.assert:
+        that: not groovy_status.changed
