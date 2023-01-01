@@ -1,0 +1,6 @@
+---
+- name: Install Icon Interpreter
+  ansible.builtin.apt:
+    name: icont
+    state: present
+    update_cache: yes

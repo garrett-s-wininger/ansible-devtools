@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Icon Interpreter Status
+      ansible.builtin.package:
+        name: icont
+        state: present
+      check_mode: yes
+      register: icon_status
+
+    - name: Assert Icon Installed
+      ansible.builtin.assert:
+        that: not icon_status.changed
