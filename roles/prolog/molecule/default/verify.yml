@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Prolog Interpreter Status
+      ansible.builtin.package:
+        name: swi-prolog
+        state: present
+      check_mode: yes
+      register: prolog_status
+
+    - name: Assert Prolog Installed
+      ansible.builtin.assert:
+        that: not prolog_status.changed
