@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check D Compiler Status
+      ansible.builtin.package:
+        name: gdc
+        state: present
+      check_mode: yes
+      register: gdc_status
+
+    - name: Assert GDC Installed
+      ansible.builtin.assert:
+        that: not gdc_status.changed
