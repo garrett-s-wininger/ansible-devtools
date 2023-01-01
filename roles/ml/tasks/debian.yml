@@ -1,6 +1,6 @@
 ---
-- name: Install Standard ML Compiler
+- name: debian | Install Standard ML Compiler
   ansible.builtin.apt:
     name: smlnj
     state: present
-    update_cache: yes
+    update_cache: true

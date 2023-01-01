@@ -1,6 +1,6 @@
 ---
-- name: Install Raku Interpreter
+- name: debian | Install Raku Interpreter
   ansible.builtin.apt:
     name: perl6
     state: present
-    update_cache: yes
+    update_cache: true

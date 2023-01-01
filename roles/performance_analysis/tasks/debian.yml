@@ -1,5 +1,5 @@
 ---
-- name: Install System Performance Tools
+- name: debian | Install System Performance Tools
   ansible.builtin.apt:
     pkg:
       - bind9-dnsutils
@@ -43,4 +43,4 @@
       - util-linux
       - wireless-tools
     state: present
-    update_cache: yes
+    update_cache: true

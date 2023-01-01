@@ -1,6 +1,6 @@
 ---
-- name: Install Erlang VM
+- name: debian | Install Erlang VM
   ansible.builtin.apt:
     name: erlang
     state: present
-    update_cache: yes
+    update_cache: true

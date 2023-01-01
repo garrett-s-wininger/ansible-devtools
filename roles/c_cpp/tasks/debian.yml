@@ -1,8 +1,8 @@
 ---
-- name: Install C/C++ Compilers and Debugger
+- name: debian | Install C/C++ Compilers and Debugger
   ansible.builtin.apt:
     pkg:
       - build-essential
       - gdb
     state: present
-    update_cache: yes
+    update_cache: true

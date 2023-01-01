@@ -1,8 +1,8 @@
 ---
-- name: Install Rust Compiler/Debugging Tools
+- name: debian | Install Rust Compiler/Debugging Tools
   ansible.builtin.apt:
     pkg:
       - cargo
       - rust-gdb
     state: present
-    update_cache: yes
+    update_cache: true

@@ -1,6 +1,6 @@
 ---
-- name: Install Prolog Interpreter
+- name: debian | Install Prolog Interpreter
   ansible.builtin.apt:
     name: swi-prolog
     state: present
-    update_cache: yes
+    update_cache: true

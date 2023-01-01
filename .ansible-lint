@@ -1,0 +1,14 @@
+---
+profile: production
+exclude_paths:
+    - .venv/
+use_default_rules: true
+enable_list:
+    - args
+    - empty-string-compare
+    - no-log-password
+    - no-same-owner
+    - name[prefix]
+    - yaml
+offline: false
+progressive: false

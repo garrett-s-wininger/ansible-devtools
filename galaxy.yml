@@ -1,12 +1,12 @@
 namespace: garrett_s_wininger
 name: devtools
-version: 0.0.1
+version: 1.0.0
 readme: README.md
 authors:
-- Garrett Wininger <garrett.s.wininger@outlook.com>
+  - Garrett Wininger <garrett.s.wininger@outlook.com>
 description: Personal collection for bootstrapping development environments.
 license:
-- MIT
+  - MIT
 tags: []
 dependencies: {}
 repository: https://github.com/garrett-s-wininger/ansible-devtools

@@ -1,6 +1,6 @@
 ---
-- name: Install OCaml Compiler
+- name: debian | Install OCaml Compiler
   ansible.builtin.apt:
     name: ocaml
     state: present
-    update_cache: yes
+    update_cache: true

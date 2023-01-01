@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: octave
         state: present
-      check_mode: yes
+      check_mode: true
       register: octave_status
 
     - name: Assert Octave Environment Available

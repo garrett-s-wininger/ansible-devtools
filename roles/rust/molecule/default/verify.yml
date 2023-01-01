@@ -7,21 +7,21 @@
       ansible.builtin.package:
         name: rustc
         state: present
-      check_mode: yes
+      check_mode: true
       register: rustc_status
 
     - name: Check Rust Debugger Presence
       ansible.builtin.package:
         name: rust-gdb
         state: present
-      check_mode: yes
+      check_mode: true
       register: rust_gdb_status
 
     - name: Check Cargo Presence
       ansible.builtin.package:
         name: cargo
         state: present
-      check_mode: yes
+      check_mode: true
       register: cargo_status
 
     - name: Validate Rust Development Components

@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: elixir
         state: present
-      check_mode: yes
+      check_mode: true
       register: elixir_status
 
     - name: Assert Elixir Installed

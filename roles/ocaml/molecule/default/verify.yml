@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: ocaml
         state: present
-      check_mode: yes
+      check_mode: true
       register: ocaml_status
 
     - name: Assert OCaml Installed

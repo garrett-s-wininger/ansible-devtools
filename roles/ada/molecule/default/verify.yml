@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: gnat
         state: present
-      check_mode: yes
+      check_mode: true
       register: package_status
 
     - name: Test Compiler Installation

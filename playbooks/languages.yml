@@ -1,18 +1,19 @@
 ---
-- hosts: all
+- name: Install Available Languages
+  hosts: all
   become: true
   collections:
     - garrett_s_wininger.devtools
 
   tasks:
     - name: Import Ada Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.ada
       tags:
         - ada
 
     - name: Import C/C++ Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.c_cpp
       tags:
         - c
@@ -21,63 +22,63 @@
         - c++
 
     - name: Import Erlang Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.erlang
       tags:
         - erlang
 
     - name: Import Fortran Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.fortran
       tags:
         - fortran
 
     - name: Import Go Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.go
       tags:
         - go
         - golang
 
     - name: Import Haskell Role  
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.haskell
       tags:
         - haskell
 
     - name: Import Java Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.java
       tags:
         - java
 
     - name: Import Octave Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.octave
       tags:
         - octave
 
     - name: Import OpenGL/Vulkan Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.opengl_vulkan
       tags:
         - opengl
         - vulkan
 
     - name: Import PHP Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.php
       tags:
         - php
 
     - name: Import Ruby Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.ruby
       tags:
         - ruby 
 
     - name: Import Rust Role
-      import_role:
+      ansible.builtin.import_role:
         name: garrett_s_wininger.devtools.rust
       tags:
         - rust

@@ -1,6 +1,6 @@
 ---
-- name: Install Octave Environment
+- name: debian | Install Octave Environment
   ansible.builtin.apt:
     name: octave
     state: present
-    update_cache: yes
+    update_cache: true

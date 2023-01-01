@@ -1,6 +1,6 @@
 ---
-- name: Install Haskell Compiler
+- name: debian | Install Haskell Compiler
   ansible.builtin.apt:
     name: ghc
     state: present
-    update_cache: yes
+    update_cache: true

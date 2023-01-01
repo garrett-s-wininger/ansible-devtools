@@ -1,6 +1,6 @@
 ---
-- name: Install D Compiler
+- name: debian | Install D Compiler
   ansible.builtin.apt:
     name: gdc
     state: present
-    update_cache: yes
+    update_cache: true

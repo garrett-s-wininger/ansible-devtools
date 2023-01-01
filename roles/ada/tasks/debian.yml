@@ -1,6 +1,6 @@
 ---
-- name: Install Ada Compiler
+- name: debian | Install Ada Compiler
   ansible.builtin.apt:
       name: gnat
       state: present
-      update_cache: yes
+      update_cache: true

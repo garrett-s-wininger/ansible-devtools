@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: gnu-smalltalk
         state: present
-      check_mode: yes
+      check_mode: true
       register: smalltalk_status
 
     - name: Assert SmallTalk Installed

@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: perl6
         state: present
-      check_mode: yes
+      check_mode: true
       register: raku_status
 
     - name: Assert Raku Installed

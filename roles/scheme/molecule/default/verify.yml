@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: guile-3.0
         state: present
-      check_mode: yes
+      check_mode: true
       register: guile_status
 
     - name: Assert Guile Installed

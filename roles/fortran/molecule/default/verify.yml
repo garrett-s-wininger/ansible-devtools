@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: gfortran
         state: present
-      check_mode: yes
+      check_mode: true
       register: fortran_status
 
     - name: Assert Packages Present

@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: gm2
         state: present
-      check_mode: yes
+      check_mode: true
       register: gm2_status
 
     - name: Assert Modula-2 Installed

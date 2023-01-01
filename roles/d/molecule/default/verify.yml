@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: gdc
         state: present
-      check_mode: yes
+      check_mode: true
       register: gdc_status
 
     - name: Assert GDC Installed

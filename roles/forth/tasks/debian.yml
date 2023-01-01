@@ -1,6 +1,6 @@
 ---
-- name: Install Forth Interpreter
+- name: debian | Install Forth Interpreter
   ansible.builtin.apt:
     name: gforth
     state: present
-    update_cache: yes
+    update_cache: true

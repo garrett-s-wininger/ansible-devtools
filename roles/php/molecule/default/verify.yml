@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: php
         state: present
-      check_mode: yes
+      check_mode: true
       register: php_status
 
     - name: Assert PHP Installed

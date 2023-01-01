@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: erlang
         state: present
-      check_mode: yes
+      check_mode: true
       register: erlang_status
 
     - name: Assert Erlang VM Present

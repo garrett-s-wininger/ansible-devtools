@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: nim
         state: present
-      check_mode: yes
+      check_mode: true
       register: nim_status
 
     - name: Assert Nim Installed

@@ -1,6 +1,6 @@
 ---
-- name: Install Ruby Interpreter
+- name: debian | Install Ruby Interpreter
   ansible.builtin.apt:
     name: ruby
     state: present
-    update_cache: yes
+    update_cache: true

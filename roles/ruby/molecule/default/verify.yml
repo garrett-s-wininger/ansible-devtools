@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: ruby
         state: present
-      check_mode: yes
+      check_mode: true
       register: ruby_status
 
     - name: Ensure Interpreter is Available

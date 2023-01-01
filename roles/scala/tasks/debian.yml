@@ -1,6 +1,6 @@
 ---
-- name: Install Scala Compiler
+- name: debian | Install Scala Compiler
   ansible.builtin.apt:
     name: scala
     state: present
-    update_cache: yes
+    update_cache: true

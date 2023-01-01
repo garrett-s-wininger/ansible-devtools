@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: "{{ item }}"
         state: present
-      check_mode: yes
+      check_mode: true
       register: package_statuses
       loop:
         - libglfw3-dev
@@ -22,7 +22,7 @@
       ansible.builtin.pip:
         name: glad
         state: present
-      check_mode: yes
+      check_mode: true
       register: glad_status
     
     - name: Ensure Required Packages are Present

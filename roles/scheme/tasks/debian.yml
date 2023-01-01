@@ -1,6 +1,6 @@
 ---
-- name: Install Scheme Interpreter
+- name: debian | Install Scheme Interpreter
   ansible.builtin.apt:
     name: guile-3.0
     state: present
-    update_cache: yes
+    update_cache: true

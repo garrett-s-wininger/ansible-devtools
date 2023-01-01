@@ -1,6 +1,6 @@
 ---
-- name: Install Go Compiler
+- name: debian | Install Go Compiler
   ansible.builtin.apt:
     name: golang
     state: present
-    update_cache: yes
+    update_cache: true

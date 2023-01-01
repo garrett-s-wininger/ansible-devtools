@@ -1,6 +1,6 @@
 ---
-- name: Install Elixir Compiler
+- name: debian | Install Elixir Compiler
   ansible.builtin.apt:
     name: elixir
     state: present
-    update_cache: yes
+    update_cache: true

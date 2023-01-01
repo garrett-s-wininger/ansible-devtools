@@ -1,5 +1,5 @@
 ---
-- name: Install OpenGL/Vulkan Libraries/Tooling
+- name: debian | Install OpenGL/Vulkan Libraries/Tooling
   ansible.builtin.apt:
     pkg:
       - libglfw3-dev
@@ -10,9 +10,9 @@
       - vulkan-tools
       - vulkan-validationlayers-dev
     state: present
-    update_cache: yes
+    update_cache: true
 
-- name: Install Pip Modules for OpenGL Extension Loading
+- name: debian | Install Pip Modules for OpenGL Extension Loading
   ansible.builtin.pip:
     name: glad
     state: present

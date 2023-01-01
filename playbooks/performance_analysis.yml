@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Install Performance Monitoring Tools
+  hosts: all
   become: true
   collections:
     - garrett_s_wininger.devtools

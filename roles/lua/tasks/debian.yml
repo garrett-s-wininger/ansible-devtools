@@ -1,6 +1,6 @@
 ---
-- name: Install Lua Package
+- name: debian | Install Lua Package
   ansible.builtin.apt:
     package: "lua{{ lua_version }}"
     state: present
-    update_cache: yes
+    update_cache: true

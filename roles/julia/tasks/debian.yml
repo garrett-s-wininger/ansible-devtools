@@ -1,6 +1,6 @@
 ---
-- name: Install Julia Packages
+- name: debian | Install Julia Packages
   ansible.builtin.apt:
     package: julia
     state: present
-    update_cache: yes
+    update_cache: true

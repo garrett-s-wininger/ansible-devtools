@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: gcc
         state: present
-      check_mode: yes
+      check_mode: true
       register: c_compiler_status
 
     - name: Check C++ Compiler Status

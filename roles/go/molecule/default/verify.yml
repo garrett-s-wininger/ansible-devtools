@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: golang
         state: present
-      check_mode: yes
+      check_mode: true
       register: golang_status
 
     - name: Assert Language Tooling Present

@@ -7,7 +7,7 @@
       ansible.builtin.package:
         name: groovy
         state: present
-      check_mode: yes
+      check_mode: true
       register: groovy_status
 
     - name: Assert Groocy Installed

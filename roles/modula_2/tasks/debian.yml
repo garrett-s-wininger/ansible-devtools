@@ -1,6 +1,6 @@
 ---
-- name: Install Modula-2 Compiler
+- name: debian | Install Modula-2 Compiler
   ansible.builtin.apt:
     name: gm2
     state: present
-    update_cache: yes
+    update_cache: true

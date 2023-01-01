@@ -1,6 +1,6 @@
 ---
-- name: Install Fortran Compiler
+- name: debian | Install Fortran Compiler
   ansible.builtin.apt:
     name: gfortran
     state: present
-    update_cache: yes
+    update_cache: true
