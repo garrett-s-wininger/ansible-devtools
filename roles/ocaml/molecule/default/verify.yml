@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check OCaml Compiler Status
+      ansible.builtin.package:
+        name: ocaml
+        state: present
+      check_mode: yes
+      register: ocaml_status
+
+    - name: Assert OCaml Installed
+      ansible.builtin.assert:
+        that: not ocaml_status.changed

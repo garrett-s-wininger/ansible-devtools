@@ -1,0 +1,6 @@
+---
+- name: Install OCaml Compiler
+  ansible.builtin.apt:
+    name: ocaml
+    state: present
+    update_cache: yes
