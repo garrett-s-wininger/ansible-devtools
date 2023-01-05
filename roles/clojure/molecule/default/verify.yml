@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check Clojure Project Manager Status
+      ansible.builtin.package:
+        name: leiningen
+        state: present
+      check_mode: true
+      register: package_status
+
+    - name: Test Project Manager Installation
+      ansible.builtin.assert:
+        that: not package_status.changed

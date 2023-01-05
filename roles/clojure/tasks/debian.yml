@@ -1,0 +1,6 @@
+---
+- name: debian | Install Clojure Project Manager
+  ansible.builtin.apt:
+      name: leiningen
+      state: present
+      update_cache: true
